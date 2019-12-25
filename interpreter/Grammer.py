@@ -11,9 +11,26 @@ from chart.Hist import hist
 from chart.Pie import pie
 from chart.Bar import barplot
 import chart.dev as dev
+from interpreter.Lex import lex
+from interpreter.Tables import keyword_table
 from exception.SyntaxException import SyntaxException
 from exception.IdNotFoundException import IdNotFoundException
 from exception.MissingArgumentException import MissingArgumentException
+
+
+def process_line(line):
+    words = lex(line)
+    if words[0] == 'print':
+        process_print(words[2:-1])
+
+
+def process_print(params):
+    if params[0] == 'c':
+        params = params[2:-1]
+        params = filter(lambda item: item != ',', params)
+        params = tuple(map(int, params))
+    else:
+        keyword_table[params[0]].print()
 
 
 def analysis(input_str):

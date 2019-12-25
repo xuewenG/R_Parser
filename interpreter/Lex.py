@@ -1,30 +1,13 @@
-separator_list = ['(', ')', ',', '"']
-logical_operator = ['!', '&', '|']
-algorithm_operator = ['+', '-', '*', '/']
-identifier = {}
-c_map = [['<-', '='],
-         ['{', ':'],
-         ['} ', ''],
-         ['}', ''],
-         ['&&', ' and '],
-         ['class(', 'class_r('],
-         ['print(', 'print_r('],
-         ['names.arg', 'arg']]
-
-
-def process_line(line):
-    words = lex(line)
-    if words[0] == 'print':
-        process_print(words[2:-1])
-
-
-def process_print(params):
-    if params[0] == 'c':
-        params = params[2:-1]
-        params = filter(lambda item: item != ',', params)
-        params = tuple(map(int, params))
-    else:
-        identifier[params[0]].print()
+from interpreter.Tables import c_map
+from interpreter.Tables import keyword_table
+from interpreter.Tables import separator_list
+from interpreter.Tables import logical_operator_list
+from interpreter.Tables import algorithm_operator_list
+from interpreter.Word import Word
+from interpreter.type.Keyword import Keyword
+from interpreter.type.Separator import Separator
+from interpreter.type.LogicalOperator import LogicalOperator
+from interpreter.type.AlgorithmicOperator import AlgorithmicOperator
 
 
 def lex(line):
@@ -36,7 +19,26 @@ def lex(line):
     return line.split(' ')
 
 
+def check_type(item):
+    word = Word(type_name='', value=item)
+    if item in separator_list:
+        word.type_name = Separator.type_name
+    elif item in logical_operator_list:
+        word.type_name = LogicalOperator.type_name
+    elif item in algorithm_operator_list:
+        word.type_name = AlgorithmicOperator.type_name
+    else:
+        word.type_name = Keyword.type_name
+        if word.value not in keyword_table.keys():
+            keyword_table[word.value] = None
+    return word
+
+
 def pre_process(content):
+    for line in content.splitlines():
+        items = lex(line)
+        for item in items:
+            word = check_type(item)
     for item in c_map:
         content = content.replace(item[0], item[1])
     return content

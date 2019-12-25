@@ -67,7 +67,7 @@ png(file = "line_chart.png")
 # Plot the bar chart. 
 plot(v,type = "o")
 # Save the file.
-# dev.off()
+dev.off()
 '''
 ```
 
