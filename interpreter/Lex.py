@@ -7,7 +7,8 @@ c_map = [['<-', '='],
          ['} ', ''],
          ['}', ''],
          ['&&', ' and '],
-         ['class(', 'class_r'],
+         ['class(', 'class_r('],
+         ['print(', 'print_r('],
          ['names.arg', 'arg']]
 
 

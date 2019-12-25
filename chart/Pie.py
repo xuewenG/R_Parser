@@ -11,4 +11,4 @@ def pie(H, labels=c(()), radius=1, main='', col=(), clockwise='None'):
     plt.pie(data, colors=color, labels=label, counterclock=clockwise, radius=radius)
     plt.title(main)
     off(plt)
-    plt.show()
+    # plt.show()

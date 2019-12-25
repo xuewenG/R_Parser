@@ -32,4 +32,4 @@ def hist(H, xlab='', ylab='', xlim=c(()), ylim=c(()), main='', col='black', brea
     plt.title(main)  # 标题
 
     off(plt)
-    plt.show()
+    # plt.show()

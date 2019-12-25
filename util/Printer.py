@@ -10,3 +10,8 @@ def print_r(obj):
         current_str = current_str + obj.__str__() + '\n'
     else:
         current_str = current_str + c(obj).__str__() + '\n'
+
+
+def print_n(obj):
+    global current_str
+    current_str = current_str + obj.__str__() + '\n'

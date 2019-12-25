@@ -27,4 +27,4 @@ def barplot(H, arg=c(()), xlab='', ylab='', main='', col='black', border=''):
     plt.ylabel(ylab)  # y轴上的名字
     plt.title(main)  # 标题
     off(plt)
-    plt.show()
+    # plt.show()

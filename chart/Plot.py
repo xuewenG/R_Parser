@@ -22,4 +22,4 @@ def plot(H,  xlab='', ylab='', main='', col='black', type='o'):
     plt.ylabel(ylab)  # y轴上的名字
     plt.title(main)  # 标题
     off(plt)
-    plt.show()
+    # plt.show()

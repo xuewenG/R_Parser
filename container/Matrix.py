@@ -6,7 +6,7 @@ from util import List
 class matrix:
     type_name = 'matrix'
 
-    def __init__(self, vec, nrow=0, ncol=0, byrow=False):
+    def __init__(self, vec=c(), nrow=0, ncol=0, byrow=False):
         self.data = vec
         self.row = int(nrow)
         self.col = int(ncol)
