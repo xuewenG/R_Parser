@@ -1,5 +1,5 @@
-from container.Vector import c
 from container.Matrix import matrix
+from container.Vector import c
 
 current_str = ''
 

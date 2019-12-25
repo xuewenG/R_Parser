@@ -1,21 +1,21 @@
-from container.Vector import c
-from container.Matrix import matrix
+import chart.dev as dev
 from atom.Class import class_r
-from util.Length import length
-from util.Rainbow import rainbow
-from util.Printer import print_r
-from util.Printer import print_n
+from chart.Bar import barplot
 from chart.Config import png
-from chart.Plot import plot
 from chart.Hist import hist
 from chart.Pie import pie
-from chart.Bar import barplot
-import chart.dev as dev
-from interpreter.Lex import lex
-from interpreter.Tables import keyword_table
-from exception.SyntaxException import SyntaxException
+from chart.Plot import plot
+from container.Matrix import matrix
+from container.Vector import c
 from exception.IdNotFoundException import IdNotFoundException
 from exception.MissingArgumentException import MissingArgumentException
+from exception.SyntaxException import SyntaxException
+from interpreter.Lex import lex
+from interpreter.Tables import keyword_table
+from util.Length import length
+from util.Printer import print_n
+from util.Printer import print_r
+from util.Rainbow import rainbow
 
 
 def process_line(line):

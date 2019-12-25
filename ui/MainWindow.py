@@ -1,6 +1,7 @@
-import util.Printer as Printer
 from tkinter import Tk, Button, Label, END, WORD, Text
 from tkinter.scrolledtext import ScrolledText
+
+import util.Printer as Printer
 from interpreter.Process import process_all
 
 

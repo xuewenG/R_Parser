@@ -1,11 +1,11 @@
-from container.Vector import c
-from container.Matrix import matrix
-from atom.Integer import Integer
 from atom.Character import Character
+from atom.Complex import Complex
+from atom.Integer import Integer
 from atom.Logical import Logical
 from atom.Numeric import Numeric
-from atom.Complex import Complex
 from atom.Raw import Raw
+from container.Matrix import matrix
+from container.Vector import c
 
 
 def class_r(obj):

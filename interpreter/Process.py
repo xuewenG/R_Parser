@@ -1,5 +1,5 @@
-from interpreter.Lex import pre_process
 from interpreter.Grammer import analysis
+from interpreter.Lex import pre_process
 
 
 def process_all(input_str):

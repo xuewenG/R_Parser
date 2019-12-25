@@ -1,7 +1,9 @@
-import matplotlib.pyplot as plt
-from container.Vector import c
-from chart.dev import off
 import math
+
+import matplotlib.pyplot as plt
+
+from chart.dev import off
+from container.Vector import c
 
 
 # hist(v,main,xlab,xlim,ylim,breaks,col,border)

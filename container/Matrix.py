@@ -1,6 +1,7 @@
-from container.Vector import c
 import math
+
 from container import List
+from container.Vector import c
 
 
 class matrix:
@@ -57,12 +58,12 @@ class matrix:
         out = ''
         out += '    '
         for i in range(self.col):
-            out += ("[,%-d]" % (i+1)).rjust(5)
+            out += ("[,%-d]" % (i + 1)).rjust(5)
         out += '\n'
         row = self.row
         col = self.col
         for i in range(row):
-            out += "[%-d,]" % (i+1)
+            out += "[%-d,]" % (i + 1)
             for j in range(col):
                 temp = i * col + j
                 if not self.by_row:

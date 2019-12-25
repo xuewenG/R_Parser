@@ -1,13 +1,13 @@
+from interpreter.Tables import algorithm_operator_list
 from interpreter.Tables import c_map
 from interpreter.Tables import keyword_table
-from interpreter.Tables import separator_list
 from interpreter.Tables import logical_operator_list
-from interpreter.Tables import algorithm_operator_list
+from interpreter.Tables import separator_list
 from interpreter.Word import Word
-from interpreter.type.Keyword import Keyword
-from interpreter.type.Separator import Separator
-from interpreter.type.LogicalOperator import LogicalOperator
 from interpreter.type.AlgorithmicOperator import AlgorithmicOperator
+from interpreter.type.Keyword import Keyword
+from interpreter.type.LogicalOperator import LogicalOperator
+from interpreter.type.Separator import Separator
 
 
 def lex(line):
