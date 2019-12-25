@@ -1,16 +1,14 @@
-from container.Vector import c
-from container.Matrix import matrix
-from atom.Class import class_r
-
-
 separator_list = ['(', ')', ',', '"']
 logical_operator = ['!', '&', '|']
 algorithm_operator = ['+', '-', '*', '/']
-identifier = {
-    'abc': c(1, 2, 3),
-    'xyz': matrix(c(3, 9, -1, 4, 2, 6), nrow=2, ncol=3),
-    'cl': class_r('qw')
-}
+identifier = {}
+c_map = [['<-', '='],
+         ['{', ':'],
+         ['} ', ''],
+         ['}', ''],
+         ['&&', ' and '],
+         ['class(', 'class_r'],
+         ['names.arg', 'arg']]
 
 
 def process_line(line):
@@ -35,3 +33,9 @@ def lex(line):
         line = line.replace('  ', ' ')
     line = line.strip()
     return line.split(' ')
+
+
+def pre_process(content):
+    for item in c_map:
+        content = content.replace(item[0], item[1])
+    return content
