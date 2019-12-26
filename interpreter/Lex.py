@@ -16,11 +16,14 @@ def lex(line):
     while '  ' in line:
         line = line.replace('  ', ' ')
     line = line.strip()
-    return line.split(' ')
+    words = [Word('func', '')]
+    for item in line.split(' '):
+        words.append(Word(Keyword.type_name, item))
+    return words
 
 
 def check_type(item):
-    word = Word(type_name='', value=item)
+    word = Word(type='', value=item)
     if item in separator_list:
         word.type_name = Separator.type_name
     elif item in logical_operator_list:

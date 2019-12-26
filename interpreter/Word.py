@@ -1,4 +1,7 @@
 class Word:
-    def __init__(self, type_name, value):
+    def __init__(self, type, value):
         self.value = value
-        self.type_name = type_name
+        self.type = type
+
+    def __repr__(self):
+        return self.type + "--" + self.value
